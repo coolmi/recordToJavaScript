@@ -1,0 +1,4 @@
+// javascript有5大类型undefined, null, boolean, string, number  还有一个Object
+// undefined 分两种情况: 一种是声明为赋值，一种是未声明过的
+// null是空对象的定义 null == undefined为true
+
