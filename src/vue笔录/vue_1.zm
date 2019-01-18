@@ -1,0 +1,30 @@
+// Object.defineProperty() 数据DOM的绑定
+let obj = {}
+let temp = {}
+Object.defineProperty(obj, 'name', {
+  value: 1,
+  configurable: true, // 可配置的
+  writable: true, // 是否可重新赋值
+  enumerable: true, // 是否可枚举 循环遍历
+  get() {
+    return temp['name']
+  },
+  set(val) {
+    temp['name'] = val
+  }
+})
+delete obj.name
+// {{msg}} 可以赋值、取值、三元
+// vue忽略掉 selected checked 都没有意义
+
+// 基础指令
+// v-text === {{}} 防止{{}}的闪现
+// v-once 只绑定一次
+// v-html
+
+// 给data中声明未初始化的变量赋值（2种方法）
+// this.$set(this.obj, 'name', '小赵') 此方法可以给对象添加响应式的数据变化
+// this.obj = {name: 'xiaozhao'}
+// 需要注意的是赋值是否生效
+// 无法改变数组某一元素或长度，在vue中是监控不到的  错误：this.arr[0] = 100; this.arr.length -=2
+// vue中操作数组变异的方法 pop push shift unshift sort reseve splice filter map

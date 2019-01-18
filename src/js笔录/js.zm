@@ -2,3 +2,21 @@
 // undefined 分两种情况: 一种是声明为赋值，一种是未声明过的
 // null是空对象的定义 null == undefined为true
 
+// 如何判断是否为空对象。
+// console.log(tem1==null);//true，因此可以用该方法判断为null对象
+// console.log(tem2=={});//false，不能这样判断{}对象 应该用下面的方式
+// console.log(JSON.stringify(tem2) == "{}")//ture
+
+
+// console.log(typeof null) //object
+// console.log(typeof {})   //object
+// console.log(null == {})  //false
+
+// 注意：在js中0为空（false） ，代表空的还有“”，null ，undefined；如果做判断if(！上面的四种值)；返回均为false
+// console.log(!null);// true
+// console.log(!0);//true
+// console.log(!"");// true
+// console.log(!undefined);// true
+// console.log(0=="");//true
+// console.log(0==" ");// true
+// console.log(undefined==null);// true
