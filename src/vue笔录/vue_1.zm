@@ -1,6 +1,6 @@
 // Object.defineProperty() 数据DOM的绑定
-let obj = {}
-let temp = {}
+let obj = {};
+let temp = {};
 Object.defineProperty(obj, 'name', {
   value: 1,
   configurable: true, // 可配置的
@@ -14,6 +14,7 @@ Object.defineProperty(obj, 'name', {
   }
 })
 delete obj.name
+
 // {{msg}} 可以赋值、取值、三元
 // vue忽略掉 selected checked 都没有意义
 
@@ -21,6 +22,8 @@ delete obj.name
 // v-text === {{}} 防止{{}}的闪现
 // v-once 只绑定一次
 // v-html
+// 使用v-cloak要加样式 锁定{{}}不闪烁
+// [v-cloak]{display:none}
 
 // 给data中声明未初始化的变量赋值（2种方法）
 // this.$set(this.obj, 'name', '小赵') 此方法可以给对象添加响应式的数据变化
@@ -28,3 +31,36 @@ delete obj.name
 // 需要注意的是赋值是否生效
 // 无法改变数组某一元素或长度，在vue中是监控不到的  错误：this.arr[0] = 100; this.arr.length -=2
 // vue中操作数组变异的方法 pop push shift unshift sort reseve splice filter map
+
+// axios的使用
+axios.get('XXX').then(function (res) {
+  // 成功
+}, function (err) {
+  // 失败
+})
+
+// promise的使用 解决回调的问题 三个状态：成功、失败、等待
+// resolve 成功态
+// reject 失败态 resolve和reject均是函数
+// promise实例有then方法 then方法中有两个函数参数
+let p = new Promise((resolve, reject) => {
+  // resolve(a)
+  reject(a);
+})
+p.then((data) => {console.log(data);},(err) => {console.log(err);})
+
+// ajax 请求 调用promise
+function ajax({url='',type='get',datatype='json'}) {
+      return new Promise((resolve, reject)=> {
+        let xhr = new XMLHttpRequest();
+        xhr.open(type,url,true);
+        xhr.responseType = datatype;
+        xhr.onload = function() {
+          resolve(xhr.response);
+        };
+        xhr.onerror = function(err) {
+          reject(err);
+        };
+        xhr.send();
+      })
+}
