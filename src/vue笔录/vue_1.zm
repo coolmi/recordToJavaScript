@@ -64,3 +64,11 @@ function ajax({url='',type='get',datatype='json'}) {
         xhr.send();
       })
 }
+[https://s.taobao.com/search?ie=utf8&initiative_id=staobaoz_20190128&stats_click=search_radio_all%3A1&js=1&imgfile=&q=%E9%9A%86%E5%8A%9B%E5%A5%87%E6%97%A0%E7%A1%85%E6%B2%B9%E6%B4%97%E5%8F%91%E6%B0%B4%E5%A5%97%E8%A3%85&suggest=0_1&_input_charset=utf-8&wq=longliqi%E6%97%A0%E7%A1%85%E6%B2%B9%E6%B4%97%E5%8F%91%E6%B0%B4&suggest_query=longliqi%E6%97%A0%E7%A1%85%E6%B2%B9%E6%B4%97%E5%8F%91%E6%B0%B4&source=suggest]
+{https://item.taobao.com/item.htm?spm=a230r.1.14.121.2592529aY0EHzR&id=577296559921&ns=1&abbucket=15#detail}
+{https://item.taobao.com/item.htm?spm=a230r.1.14.127.2592529aY0EHzR&id=567118164242&ns=1&abbucket=15#detail}
+
+https://detail.tmall.com/item.htm?spm=a230r.1.14.54.2592529aY0EHzR&id=563845393185&ns=1&abbucket=15
+
+  https://detail.tmall.com/item.htm?spm=a230r.1.14.13.2592529aY0EHzR&id=534980582298&cm_id=140105335569ed55e27b&abbucket=15&skuId=3866478832918
+    https://detail.tmall.com/item.htm?spm=a230r.1.14.20.2592529aY0EHzR&id=558385190301&ns=1&abbucket=15
