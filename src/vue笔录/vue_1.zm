@@ -64,6 +64,12 @@ function ajax({url='',type='get',datatype='json'}) {
         xhr.send();
       })
 }
+
+// 数组every事件 判断数组中是否满足条件（可以通过函数） 有false就返回false  全是true才是true
+
+// 计算属性 变量名不能和data中的变量重名  有get()和set()两个方法 如果是属性函数的话，默认调取get()函数
+// 在created中加载的数据，通过ajax获取的方法不会先执行
+// 单选框要获取实时数据，就要调取@change方法
 [https://s.taobao.com/search?ie=utf8&initiative_id=staobaoz_20190128&stats_click=search_radio_all%3A1&js=1&imgfile=&q=%E9%9A%86%E5%8A%9B%E5%A5%87%E6%97%A0%E7%A1%85%E6%B2%B9%E6%B4%97%E5%8F%91%E6%B0%B4%E5%A5%97%E8%A3%85&suggest=0_1&_input_charset=utf-8&wq=longliqi%E6%97%A0%E7%A1%85%E6%B2%B9%E6%B4%97%E5%8F%91%E6%B0%B4&suggest_query=longliqi%E6%97%A0%E7%A1%85%E6%B2%B9%E6%B4%97%E5%8F%91%E6%B0%B4&source=suggest]
 {https://item.taobao.com/item.htm?spm=a230r.1.14.121.2592529aY0EHzR&id=577296559921&ns=1&abbucket=15#detail}
 {https://item.taobao.com/item.htm?spm=a230r.1.14.127.2592529aY0EHzR&id=567118164242&ns=1&abbucket=15#detail}
