@@ -70,6 +70,30 @@ function ajax({url='',type='get',datatype='json'}) {
 // 计算属性 变量名不能和data中的变量重名  有get()和set()两个方法 如果是属性函数的话，默认调取get()函数
 // 在created中加载的数据，通过ajax获取的方法不会先执行
 // 单选框要获取实时数据，就要调取@change方法
+
+// 自定义指令
+directives  定义指令
+fn(el,bindings) {
+bindings.value // DOM的值 el当前DOM
+el.focuse();
+}
+指令命名color-dd 遵循驼峰命名规则colorDd
+localStorage.setItem('data',this.data)
+localStorage.getItem('data')
+watch:{
+  todos:{ // watch默认只监控一层的数据变化（以下是深度监控）
+    handler(){ // 默认写成函数就相当于默写了个handler
+      // localStroage默认存储字符串
+      localStorage.setItem('data',JSON.stringify(this.data)); // 存在本地数据
+    },deep:true;
+  }
+}
+// 从本地取数据
+this.data = JSON.parse(localStorage.getItem('data')) || this.data
+this.$set 后加的属性实现响应式变化
+this.$options vm上的所有属性
+this.$nextTick(()=>{//异步方法})
+this.$refs // 可以获取当前DOM对象，如果DOM不是v-for循环出来的，只能获取一个，通过v-for可以循环获取多个
 [https://s.taobao.com/search?ie=utf8&initiative_id=staobaoz_20190128&stats_click=search_radio_all%3A1&js=1&imgfile=&q=%E9%9A%86%E5%8A%9B%E5%A5%87%E6%97%A0%E7%A1%85%E6%B2%B9%E6%B4%97%E5%8F%91%E6%B0%B4%E5%A5%97%E8%A3%85&suggest=0_1&_input_charset=utf-8&wq=longliqi%E6%97%A0%E7%A1%85%E6%B2%B9%E6%B4%97%E5%8F%91%E6%B0%B4&suggest_query=longliqi%E6%97%A0%E7%A1%85%E6%B2%B9%E6%B4%97%E5%8F%91%E6%B0%B4&source=suggest]
 {https://item.taobao.com/item.htm?spm=a230r.1.14.121.2592529aY0EHzR&id=577296559921&ns=1&abbucket=15#detail}
 {https://item.taobao.com/item.htm?spm=a230r.1.14.127.2592529aY0EHzR&id=567118164242&ns=1&abbucket=15#detail}
